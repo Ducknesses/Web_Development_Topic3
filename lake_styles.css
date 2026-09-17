@@ -120,6 +120,12 @@ body > section#rightcol {
    color: #c0c0c0;
 }
 
+/* Inset main body paragraphs. */
+#leftcol > p {
+   margin-left: 24px;
+   margin-right: 24px;
+}
+
 #leftcol > aside {
    padding: 20px 24px;
 }
