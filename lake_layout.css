@@ -57,7 +57,7 @@ li, main, nav, ol, p, section, span, ul {
 /* Header Navigation */
 
 header > nav {
-	display: table;
+	display: block;
 	width: 100%;
 }
 
