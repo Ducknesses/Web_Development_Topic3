@@ -1,0 +1,209 @@
+﻿@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+
+   The Great Lakescape Lodge Theme Styles
+   Filename: lake_styles.css
+
+   This stylesheet controls the "look and feel" of the page: colours,
+   typography, and decorative effects for each component. The overall
+   page structure (widths, floats, positioning) is handled by
+   lake_layout.css. The file is organised into the numbered component
+   modules described below.
+*/
+
+
+/* ==========================================================================
+   1. Web Font - LodgeDisplay
+   Registers the custom Doblin Plain typeface as "LodgeDisplay" so the
+   decorative font can be used by the headings without being installed
+   on the visitor's computer.
+   ========================================================================== */
+@font-face{
+   font-family:"LodgeDisplay";
+   src:url("DobkinPlain.woff") format("woff");
+}
+
+
+/* ==========================================================================
+   2. Base Page Styles (body, h1, h2)
+   Sets the dark forest-green page background, the light grey-green text
+   colour, and the default sans-serif body font. Headings (h1, h2) switch
+   to the LodgeDisplay decorative serif font in a deep green tone.
+   ========================================================================== */
+body{
+   background-color: #1c1c12;
+   color:#c9d2c8;
+   font-family:Arial,sans-serif;
+   margin:0;
+   padding:20px;
+   border-inline: 30px solid #d5d38f; /* 左、右 */
+   border-bottom: 30px solid #4d464e; /* 下方 */
+}
+
+h1,h2{
+   font-family:"LodgeDisplay",Georgia,serif;
+   color:#e8e8e8;
+}
+
+/* ==========================================================================
+   3. Header Navigation Bar
+   Lays out the main menu as a single flex row of evenly spaced links
+   (flex + justify-content: space-around) and styles each link as a
+   purple-coloured block button that darkens on hover.
+   ========================================================================== */
+header > nav > ul{
+   display:flex;
+   list-style:none;
+   padding:0;
+   margin:0;
+   gap:0;
+   background-color:#774a7a;
+}
+
+header > nav > ul >li{
+   flex:1;
+   text-align:center;
+}
+
+header > nav > ul > li > a{
+   display:block;
+   width:100%;
+   padding: 12px 16px;
+   color:#fff;
+   text-decoration:none;
+}
+
+
+
+header nav a{
+   display:block;
+   padding:12px 16px;
+   color:#ffffff;
+   background-color:#774a7a;
+   text-decoration:none;
+}
+
+header nav a:hover{
+   background-color:#7a3d8b;
+}
+
+/* ==========================================================================
+   4. Page Layout (body > section)
+   The main content area is a two-column layout with a 70% width left
+   column and a 24% width right column, separated by a 4% gutter. The
+   footer clears the floats so it appears below the two columns.
+   ========================================================================== */
+body > section#leftcol,
+body > section#rightcol {
+   width: auto;
+   float: none;
+   margin: 0;
+}
+
+#rightcol{
+   /* text-align:center; */
+   background-color:#582d5a;
+}
+
+/* 右栏导航内容缩进并置中摆放 */
+#rightcol > nav {
+   width: 80%;
+   margin: 0 auto;
+}
+
+/* 每个栏目标题居中 */
+#rightcol > nav > h2 {
+   text-align: center;
+}
+
+/* 链接保持左对齐，但移除浏览器默认圆点和大缩进 */
+#rightcol >nav > h2{
+   text-align:left;
+   margin-left:0;
+}
+
+#rightcol > nav > ul {
+   list-style-type:none;
+   padding-left: 0;
+   margin: 0 0 2rem;
+}
+
+#rightcol > nav > ul > li {
+   text-align: left;
+}
+
+#rightcol >blockquote {
+   margin: 0 auto;
+   width: 80%;
+   color:#d391cf;
+   text-align: left;
+   text-indent: 0rem;
+}
+
+#leftcol > aside {
+   padding: 20px 24px;
+}
+
+#leftcol > aside:first-of-type{
+   background-color:#e3a28e;
+}
+
+#leftcol> aside:last-of-type{
+   background-color:#d9bd63;
+}
+/* ==========================================================================
+   5. Sidebar Note Lists (aside)
+   Overrides the default bullet with a square marker and indents the note
+   list, then colours the ::marker pseudo-element with the lodge's amber
+   accent colour so the bullets match the other decorative details.
+   ========================================================================== */
+aside ul{
+   list-style:square;
+   padding-left:28px;
+}
+
+aside li::marker{
+   color:#b06b2c;
+}
+
+
+/* ==========================================================================
+   6. Testimonial Quote (blockquote)
+   Adds large decorative opening and closing quotation marks around the
+   guest testimonial in the same amber accent colour.
+   ========================================================================== */
+blockquote::before{
+   content:"“";
+   font-size:2rem;
+   color:#b06b2c;
+}
+
+blockquote::after{
+   content:"”";
+   font-size:2rem;
+   color:#b06b2c;
+}
+
+/* ==========================================================================
+   7. Page Grid Layout (body)
+   Turns the page body into a two-column CSS grid (70% main content /
+   24% side column with a 4% gutter). The header and footer use
+   grid-column: 1/-1 so they stretch across the full width of the grid.
+   ========================================================================== */
+body {
+   display:grid;
+   grid-template-columns: 68% 30%;
+   gap:2%;
+}
+
+body > header,
+body > footer{
+   grid-column:1/-1;
+   text-align:center;                                 
+}
+
+
