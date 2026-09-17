@@ -27,15 +27,15 @@ body > header > img {
 }
 
 body > section#leftcol {
-	width: 60%;
+	width: 70%;
 	float: left;
 	margin-left: 0%;
 	margin-right: 4%;
 }
 
 body > section#rightcol {
-	width: 40%;
-	float: right;
+	width: 24%;
+	float: left;
 	margin-right: 2%;
 }
 
